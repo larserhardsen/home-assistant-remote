@@ -297,9 +297,13 @@ class RemoteConnection(object):
                 return
 
             else:
-                callback = self._handlers.get(message['id'])
-                if callback is not None:
-                    callback(message)
+                try:
+                    _LOGGER.debug(message['id'])
+                    callback = self._handlers.get(message['id'])
+                    if callback is not None:
+                        callback(message)
+                except Exception as err:
+                   _LOGGER.error('Bad stuff happened in the callback stuff: %s', err)
 
         await self._disconnected()
 

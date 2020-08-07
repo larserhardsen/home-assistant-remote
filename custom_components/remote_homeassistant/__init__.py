@@ -298,7 +298,6 @@ class RemoteConnection(object):
 
             else:
                 try:
-                    _LOGGER.debug(message['id'])
                     callback = self._handlers.get(message['id'])
                     if callback is not None:
                         callback(message)

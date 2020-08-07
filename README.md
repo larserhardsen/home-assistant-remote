@@ -10,7 +10,7 @@ _Component to link multiple Home-Assistant instances together._
 
 Platform | Description
 -- | --
-`remote_homeassistant` | Link multiple Home-Assistant instances together .
+`remote_homeassistant` | Link multiple Home-Assistant instances together (debug) .
 
 The master instance connects to the Websocket APIs of the secondary instances (already enabled out of box), the connection options are specified via the `host`, `port`, and `secure` configuration parameters. If the secondary instance requires an access token to connect (created on the Profile page), it can be set via the `access_token` parameter. To ignore SSL warnings in secure mode, set the `verify_ssl` parameter to false.
 
